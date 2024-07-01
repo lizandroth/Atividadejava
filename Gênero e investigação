@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class Genero {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite uma letra (F ou M): ");
+        char letra = scanner.next().charAt(0);
+
+        if (letra == 'F' || letra == 'f') {
+            System.out.println("Feminino");
+        } else if (letra == 'M' || letra == 'm') {
+            System.out.println("Masculino");
+        } else {
+            System.out.println("Letra inválida");
+        }
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+
+public class Investigação {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int contSim = 0;
+        
+        System.out.println("Responda as perguntas com 'S' para Sim e 'N' para Não.");
+        
+        System.out.print("Telefonou para vítima? ");
+        if (scanner.next().equalsIgnoreCase("S")) {
+            contSim++;
+        }
+        
+        System.out.print("Esteve no local do crime? ");
+        if (scanner.next().equalsIgnoreCase("S")) {
+            contSim++;
+        }
+        
+        System.out.print("Mora perto da vítima? ");
+        if (scanner.next().equalsIgnoreCase("S")) {
+            contSim++;
+        }
+        
+        System.out.print("Devia para vítima? ");
+        if (scanner.next().equalsIgnoreCase("S")) {
+            contSim++;
+        }
+        
+        System.out.print("Já trabalhou com a vítima? ");
+        if (scanner.next().equalsIgnoreCase("S")) {
+            contSim++;
+        }
+
+        // Classificação baseada no número de respostas "Sim"
+        if (contSim == 2) {
+            System.out.println("Suspeita");
+        } else if (contSim >= 3 && contSim <= 4) {
+            System.out.println("Cúmplice");
+        } else if (contSim == 5) {
+            System.out.println("Assassino");
+        } else {
+            System.out.println("Inocente");
+        }
+    }
+}
